@@ -1,3 +1,7 @@
+## SETUP SHELL
+echo "source /vagrant/setup/.bashrc" >> /home/vagrant/.bashrc
+
+## SETUP GHOST
 if [ ! -f /var/log/firsttime ]
 then
 	touch /var/log/firsttime
@@ -31,62 +35,3 @@ then
 	sudo cp /vagrant/setup/ghost.conf /etc/init/
 	sudo service ghost start
 fi
-
-# #!/usr/bin/env bash
-
-# apt-get update
-
-# ## SETUP BASHRC
-# echo "source /vagrant/setup/.bashrc" >> /home/vagrant/.bashrc
-
-# ## INSTALL NODEJS
-# echo "INSTALLING NODEJS"
-
-# apt-get install -y npm
-# apt-get install -y nodejs
-
-# ## INSTALL UNZIP
-# echo "INSTALLING UNZIP"
-
-# apt-get install -y unzip
-
-# ## INSTALL NODE LEGACY
-# echo "INSTALLING NODE LEGACY"
-
-# apt-get install -y nodejs-legacy
-
-# ## INSTAL APACHE2
-# #echo "INSTALLING APACHE2"
-# #
-# #apt-get install -y apache2
-
-# ## INSTALL GHOST
-# echo "INSTALLING GHOST"
-
-# curl -L https://ghost.org/zip/ghost-latest.zip -o ghost.zip
-# mkdir /var/www/
-# unzip -uo ghost.zip -d /var/www/ghost
-# cd /var/www/ghost
-# npm install --production
-
-# ### CONFIGURE GHOST
-# #
-# ### RUN GHOST AS A SERVICE
-# #echo "RUN GHOST AS A SERVICE"
-# #
-# #cp /vagrant/setup/ghost.conf /etc/init/ghost.conf
-# #chmod 644 /etc/init/ghost.conf
-# #service ghost start
-# #
-# ### CONFIGURE APACHE
-# #echo "CONFIGURE APACHE"
-# #
-# #a2enmod proxy_http
-# #cp /vagrant/setup/ghost_apache.conf /etc/apache2/sites-available/ghost.conf
-# #chmod 644 /etc/apache2/sites-available/ghost.conf
-# #a2dissite default
-# #a2ensite ghost
-# #service apache reload
-# #
-# #
-# #

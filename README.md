@@ -1,6 +1,6 @@
 # Ghost set-up with Vagrant
 
-This repository aims at providing the necessary files to deploy a fully exploitable environnement running ghost at `localhost:1234/ghost` under a `ubuntu/trusty64` virtual machine created with vagrant.
+This repository aims at providing the necessary files to deploy a fully exploitable environnement running [Ghost](https://ghost.org/) at `localhost:1234/ghost` under a `ubuntu/trusty64` virtual machine created with [vagrant](https://www.vagrantup.com/).
 
 ## How to use
 

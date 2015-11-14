@@ -1,6 +1,3 @@
-## SETUP SHELL
-echo "source /vagrant/setup/.bashrc" >> /home/vagrant/.bashrc
-
 ## SETUP GHOST
 if [ ! -f /var/log/firsttime ]
 then
@@ -22,16 +19,17 @@ then
 	unzip ghost-latest.zip
 
 	# Create your running config and bind server socket to all IPs.
-	cp config.example.js config.js
-	sed -i 's/127.0.0.1/0.0.0.0/g' config.js
+	# cp config.example.js config.js
+	# sed -i 's/127.0.0.1/0.0.0.0/g' config.js
 
 	# Install Ghost.
 	sudo npm install --production
+
+	# Install forever & make ghost run forever
+	sudo npm install forever -g
+	cd /var/www/ghost
+	NODE_ENV=production forever start index.js
 fi
 
-# Run via an INIT job.
-if [ ! -f /etc/init/ghost.conf ]
-then
-	sudo cp /vagrant/setup/ghost.conf /etc/init/
-	sudo service ghost start
-fi
+## SETUP SHELL
+echo "source /vagrant/setup/.bashrc" >> /home/vagrant/.bashrc

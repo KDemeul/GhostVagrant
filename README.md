@@ -8,4 +8,6 @@ This repository aims at providing the necessary files to deploy a fully exploita
 - `vagrant up`
 - `vagrant ssh` into your local machine
 - `cd /var/www/ghost/ && sudo npm start` to start the ghost platform
-- Your all set ! Go to `localhost:8080/ghost` and start playing around :octocat:
+- You're all set ! Go to `localhost:8080/ghost` and start playing around 
+
+:octocat:
